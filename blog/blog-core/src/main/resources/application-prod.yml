@@ -1,0 +1,6 @@
+spring:
+  redis:
+    host: ${ip}
+    port: 6379
+    timeout: 10000
+    password: redispassword

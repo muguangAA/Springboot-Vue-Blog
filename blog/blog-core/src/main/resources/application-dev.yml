@@ -1,0 +1,11 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000
+
+logging:
+  level:
+    com.muguang: debug
+  pattern:
+    dateformat: MM-dd HH:ss:SSS

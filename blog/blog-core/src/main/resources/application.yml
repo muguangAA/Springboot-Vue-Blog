@@ -1,0 +1,67 @@
+server:
+  port: 8888
+
+ip: ip
+
+spring:
+  profiles:
+    active: prod
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: mysqlpassword
+    url: jdbc:mysql:// ${ip} :3306/blog?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+
+    druid:
+      filters: stat,wall,slf4j
+      aop-patterns: com.muguang.*
+
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+      filter:
+        stat:
+          enabled: true
+          slow-sql-millis: 1000
+          log-slow-sql: true
+        wall:
+          enabled: true
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+  # 搜索指定包别名
+  typeAliasesPackage: com.muguang.core.entity
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+
+pagehelper:
+  helper-dialect: mysql
+
+# 自定义的配置
+host: ${ip}
+port: "8888"
+
+redis:
+  userKey: "userId:"
+  expireTime: 5
+
+tokenUtils:
+  secret: muguang
+  expireTime: 5
+
+
+FileStore:
+  saveUrl: "/storage"
