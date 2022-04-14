@@ -1,5 +1,10 @@
 # Springboot-Vue-Blog
 前后端分离的个人博客（逐渐完善中）
+### 前端
+vue + element-ui
+
+### 后端
+spirngboot + spring-securiry + jwt + mybatis + mysql + redis
 
 # Springboot-Vue-Blog
 前后端分离的个人博客（逐渐完善中）
