@@ -1,5 +1,5 @@
 # Springboot-Vue-Blog
-前后端分离的个人博客（逐渐完善中）
+前后端分离的个人博客
 ### 前端
 vue + element-ui
 
